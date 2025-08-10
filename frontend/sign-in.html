@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MediVault Login</title>
+  <!--<script src="https://unpkg.com/html5-qrcode"></script>-->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('assets/signup.webp') no-repeat center center fixed;
+      background-size: cover;
+      padding: 20px;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      width: 800px;
+      height: 500px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      border-radius: 20px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .login-section, .scanner-section {
+      flex: 1;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-section {
+      background: rgba(0, 121, 107, 0.9);
+      color: #fff;
+    }
+
+    .login-section h2 {
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+    }
+
+    input {
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #004d40;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    a {
+      margin-top: 10px;
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .scanner-section h3 {
+      margin-bottom: 20px;
+      color: #00796b;
+    }
+
+    #preview {
+      width: 100%;
+      max-width: 300px;
+      border: 2px solid #00796b;
+      border-radius: 10px;
+    }
+
+    #scanResult {
+      margin-top: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Email/Password Login -->
+    <div class="login-section">
+      <h2>Welcome to MediVault</h2>
+      <form id="loginForm">
+        <input type="email" id="email" placeholder="Email" required autocomplete="email" />
+        <input type="password" id="password" placeholder="Password" required autocomplete="current-password"/>
+        <button type="submit">Sign In</button>
+        <a href="#">Forgot password?</a>
+      </form>
+    </div>
+
+    <!-- QR Code Scanner Login -->
+    <div class="scanner-section">
+      <h3>Scan Your QR Code</h3>
+      <div id="preview"></div>
+      <p id="scanResult">Awaiting scan...</p>
+    </div>
+  </div>
+    <script src="js/sign-in.js"> 
+  </script>
+</body>
+</html>

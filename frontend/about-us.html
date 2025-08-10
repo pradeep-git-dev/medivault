@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - MediVault</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    .banner {
+      background: linear-gradient(to right, #00bcd4, #0097a7);
+      color: white;
+      padding: 25px 40px;
+      text-align: center;
+    }
+
+    .banner h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .banner p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .spacer {
+      background: url('abouts us background.jpeg') center/cover no-repeat;
+      height: 75vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      color: white;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    }
+
+    .about-section {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease-out;
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .about-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .about-section h2 {
+      font-size: 32px;
+      color: #222;
+      margin-bottom: 20px;
+    }
+
+    .about-section p {
+      font-size: 18px;
+      color: #555;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: 0 auto 20px;
+    }
+
+    .features {
+      text-align: left;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .features ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .features li {
+      margin-bottom: 12px;
+      font-size: 17px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .features li::before {
+      content: "✔️";
+      position: absolute;
+      left: 0;
+      color: #0097a7;
+    }
+
+    .app-preview img {
+      width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="banner">
+    <h1>Welcome to MediVault</h1>
+    <p>Your trusted digital health companion. Scroll down to learn more about our mission and services.</p>
+  </div>
+
+  <div class="spacer">
+   
+  </div>
+
+  <div class="about-section" id="about">
+    <h2>WE ARE MEDIVAULT</h2>
+    <p><strong>MediVault</strong> is a patient-centric health platform designed to streamline emergency medical access and long-term care management. It integrates QR-based health cards, secure data storage, and real-time synchronization to empower individuals and healthcare providers with instant access to critical medical information.</p>
+
+    <div class="features">
+      <ul>
+        <li>QR Health Cards for emergency responders and doctors</li>
+        <li>Smart Intake Forms for efficient diagnosis</li>
+        <li>Encrypted Medical Repository for secure storage</li>
+        <li>AI-Ready Health Records for predictive care</li>
+        <li>Multilingual Emergency Access for global usability</li>
+        <li>Data-Driven Insights for research and analytics</li>
+      </ul>
+    </div>
+
+    <p><strong>Impact & Vision:</strong> MediVault aims to serve over 100 million individuals managing chronic conditions or seeking peace of mind through organized health records. By bridging the gap between fragmented data and precision care, it transitions healthcare from reactive treatment to proactive prevention.</p>
+
+    <p><strong>My Role:</strong> As the lead developer and strategist, I designed and implemented MediVault’s core architecture, including QR integration, UI/UX transitions, and backend synchronization. I focused on accessibility, emergency responsiveness, and scalable infrastructure to ensure real-world impact.</p>
+
+    <div class="app-preview">
+      <img src="medivault-app-preview.png" alt="MediVault App Preview" />
+    </div>
+  </div>
+  <div class="footer" style="
+  background: linear-gradient(to right, #00bcd4, #ff4081);
+  color: white;
+  padding: 60px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-family: 'Segoe UI', sans-serif;
+">
+  <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+    <h3>Health Services</h3>
+    <ul style="list-style: none; padding: 0;">
+      <li>QR Health Cards</li>
+      <li>Doctor Consultation</li>
+      <li>Lab Test Booking</li>
+      <li>Medicine Delivery</li>
+      <li>Emergency Access</li>
+      <li>Chronic Care Support</li>
+    </ul>
+  </div>
+
+  <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+    <h3>Hospitalization</h3>
+    <ul style="list-style: none; padding: 0;">
+      <li>Locate Hospitals</li>
+      <li>Download eCard</li>
+      <li>Track Claims</li>
+      <li>Insurance Integration</li>
+    </ul>
+  </div>
+
+  <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+    <h3>Policies</h3>
+    <ul style="list-style: none; padding: 0;">
+      <li>Terms of Use</li>
+      <li>Privacy Policy</li>
+      <li>Security & Data Protection</li>
+      <li>Refund Policy</li>
+    </ul>
+  </div>
+
+  <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+    <h3>About MediVault</h3>
+    <ul style="list-style: none; padding: 0;">
+      <li>Overview</li>
+      <li>Our Mission</li>
+      <li>Careers</li>
+      <li>Contact Us</li>
+      <li>Blog</li>
+      <li>Testimonials</li>
+    </ul>
+  </div>
+
+  <div style="flex: 1; min-width: 200px; margin-bottom: 20px;">
+    <h3>Connect</h3>
+    <p>Download our app:</p>
+    <img src="google-play-icon.png" alt="Google Play" style="width: 120px; margin-right: 10px;" />
+    <img src="app-store-icon.png" alt="App Store" style="width: 120px;" />
+    <p style="margin-top: 10px;">Follow us:</p>
+    <img src="facebook-icon.png" alt="Facebook" style="width: 24px; margin-right: 10px;" />
+    <img src="linkedin-icon.png" alt="LinkedIn" style="width: 24px; margin-right: 10px;" />
+    <img src="twitter-icon.png" alt="Twitter" style="width: 24px;" />
+  </div>
+</div>
+
+  <script>
+    const aboutSection = document.getElementById('about');
+
+    window.addEventListener('scroll', () => {
+      const sectionTop = aboutSection.getBoundingClientRect().top;
+      const triggerPoint = window.innerHeight - 100;
+
+      if (sectionTop < triggerPoint) {
+        aboutSection.classList.add('visible');
+      }
+    });
+  </script>
+
+</body>
+</html>

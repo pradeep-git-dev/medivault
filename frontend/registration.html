@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MediVault Registration</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('regestration.jpg') no-repeat center center fixed;
+      background-size: cover;
+      padding: 20px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      text-align: center;
+      color: #00796b;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .name-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    .name-group input {
+      flex: 1;
+    }
+
+    button {
+      background-color: #009688;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #00796b;
+    }
+
+    #qr {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    #profile {
+      margin-top: 30px;
+      background: #f1f8e9;
+      padding: 20px;
+      border-radius: 8px;
+      display: none;
+    }
+
+    #profile h3 {
+      margin-bottom: 10px;
+      color: #33691e;
+    }
+
+    #profile pre {
+      font-size: 14px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+      .name-group {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>MediVault Registration</h1>
+
+    <form id="regForm">
+      <!-- Same form fields as before -->
+      <label>First Name</label>
+      <input type="text" id="firstName" required>
+      <label>Middle Name</label>
+      <input type="text" id="middleName">
+      <label>Last Name</label>
+      <input type="text" id="lastName" required>
+      <label>Email Address</label>
+      <input type="email" id="email" required>
+      <label>Phone Number</label>
+      <input type="tel" id="phone" required>
+      <label>Date of Birth</label>
+      <input type="date" id="dob" required>
+      <label>Aadhaar Number</label>
+      <input type="text" id="aadhaar" maxlength="12" required>
+      <label>PAN Card Number</label>
+      <input type="text" id="pan" maxlength="10" required>
+      <label>Residential Address</label>
+      <textarea id="address" rows="3" required></textarea>
+      <label>Blood Group</label>
+      <select id="blood" required>
+        <option value="">Select</option>
+        <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+        <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+      </select>
+      <label>Existing Medical Conditions</label>
+      <input type="text" id="conditions">
+      <label>Current Medications</label>
+      <input type="text" id="medications">
+      <label>Emergency Contact Name</label>
+      <input type="text" id="emergencyName" required>
+      <label>Emergency Contact Number</label>
+      <input type="tel" id="emergencyPhone" required>
+      <label>Set Password</label>
+      <input type="password" id="password" required>
+      <label>Re-type Password</label>
+      <input type="password" id="confirmPassword" required>
+
+      <button type="submit">Register & Generate QR</button>
+    </form>
+
+    <div id="qr"></div>
+    <button id="showProfileBtn" style="display:none; margin-top: 20px;">Show Medical Data</button>
+
+    <div id="profile">
+      <h3>Medical Profile</h3>
+      <pre id="profileData"></pre>
+    </div>
+  </div>
+
+<script src="js/register.js"></script>
+
+
+</body>
+</html>

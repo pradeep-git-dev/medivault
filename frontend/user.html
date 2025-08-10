@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>User Profile</title></head><body>
+<h2 id="name">Profile</h2>
+<div id="profile"></div>
+<script>
+  const params = new URLSearchParams(location.search);
+  const id = params.get('id');
+  if (!id) document.getElementById('profile').textContent = 'No id provided';
+  else {
+    fetch('/api/user/'+id).then(r=>r.json()).then(j=>{
+      if (j.error) document.getElementById('profile').textContent = j.error;
+      else {
+        document.getElementById('name').textContent = (j.firstName||'')+' '+(j.lastName||'');
+        document.getElementById('profile').innerHTML = '<pre>'+JSON.stringify(j, null, 2)+'</pre>';
+      }
+    });
+  }
+</script>
+</body></html>
