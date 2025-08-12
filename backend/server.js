@@ -20,3 +20,20 @@ app.use('/api/medical', medicalRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
+
+
+import path from 'path';
+
+import express from 'express';
+
+const app = express();
+
+const __dirname = path.resolve();
+
+app.use(express.static(path.join(__dirname, '/frontend')));
+
+app.get('*', (req, res) => {
+
+  res.sendFile(path.join(__dirname, '/frontend/index.html'));
+
+});
