@@ -21,12 +21,21 @@ app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/medical', medicalRoutes);
 
-const __dirnameDir = path.resolve();
-app.use(express.static(path.join(__dirnameDir, '/frontend')));
+// Correctly determine the absolute path to the frontend folder
+// The __dirname variable points to the directory where this file (server.js) is located.
+// We use '..' to go up one level from 'backend' to the project root,
+// and then we go into the 'frontend' folder.
+const frontendPath = path.join(__dirname, '..', 'frontend');
 
+// Serve static assets from the frontend folder
+app.use(express.static(frontendPath));
+
+// Serve the index.html file for all other routes to enable client-side routing
+// This must be placed after your API routes.
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirnameDir, '/frontend/index.html'));
+    res.sendFile(path.join(frontendPath, 'index.html'));
 });
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
+
